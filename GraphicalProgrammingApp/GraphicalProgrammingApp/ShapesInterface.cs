@@ -18,4 +18,4 @@ namespace GraphicalProgrammingApp
             void draw(Graphics g);
         }
     }
-}
+
