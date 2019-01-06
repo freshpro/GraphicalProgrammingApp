@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace GraphicalProgrammingApp
 {
-    class Rectangle:Shape
+    /// <summary>
+    /// Represents a rectangle shape
+    /// </summary>
+    internal class Rectangle : Shape
     {
         int width, height, rotate;
         public Rectangle() : base()
@@ -47,13 +50,28 @@ namespace GraphicalProgrammingApp
 
         public override void draw(Graphics g)
         {
-           
+            g.RotateTransform(rotate, 0);
+            if (!texture)
+            {
                 Pen p = new Pen(Color.Black, 2);
                 SolidBrush b = new SolidBrush(colour);
                 g.FillRectangle(b, x, y, width, height);
                 g.DrawRectangle(p, x, y, width, height);
             }
+            else
+            {
+
+                Bitmap bitmap = new Bitmap("texture.jpg");
+                TextureBrush tBrush = new TextureBrush(bitmap);
+                Pen texturedPen = new Pen(tBrush, 30);
+                g.FillRectangle(tBrush, x, y, width, height);
+                g.DrawRectangle(texturedPen, x, y, width, height);
+
+
+            }
 
         }
-   }
-  
+
+
+    }
+}
