@@ -49,6 +49,7 @@
     <Compile Include="Circle.cs" />
     <Compile Include="CommandParser.cs" />
     <Compile Include="ExceptionHandle.cs" />
+    <Compile Include="Line.cs" />
     <Compile Include="Polygon.cs" />
     <Compile Include="Rectangle.cs" />
     <Compile Include="ShapeFactory.cs" />
